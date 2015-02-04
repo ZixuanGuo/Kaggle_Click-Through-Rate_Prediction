@@ -4,7 +4,14 @@
 @note:  the purpose of this script is to build a prediction model for the 
         folowing kaggle competition:
             http://www.kaggle.com/c/avazu-ctr-prediction, 
-        which predicts whether a mobile ad will be clicked 
+        which predicts whether a mobile ad will be clicked.
+        
+        Methodology:
+            - Here we use hash trick to transform the feature and random forest
+            to train the model. 
+            - The final prediction is an ensemble of 50 predictions generated
+            by training random forest model on 50 dataset. Each of the 50 data
+            set is a subset of the orignal training data.
 """
 import pandas as pd
 import random as rd
